@@ -7,6 +7,8 @@
 
 body {
   background-color: #003459; /*prussian blue background*/
+  margin: 0 0 0 0;
+  padding
 }
 
 .container {
@@ -14,11 +16,25 @@ body {
   margin:auto;
 }
 
+.email {
+  margin: 60px 0px 0px 100px;
+}
+
+.email a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 18pt;
+  margin: 40px 10px 0px 0px;
+  font-family: Archivo Narrow, Helvetica;
+}
+
+.email a:hover {
+  color: #E0E1DD;
+}
+
 #main-header {
   background-color: #00171F;
-  margin-top:100px;
   height: 210px;
-  padding: 0;
 }
 
 h1 {
@@ -36,7 +52,7 @@ h1 {
 
 h2 {
   color: #007EA7;
-  font-size: 36pt;
+  font-size: 42pt;
   line-height: 0.6em;
   margin: 100px 10px 0px 0px;
 }
@@ -66,6 +82,31 @@ p {
   /*padding: 5px;*/
   margin: 40px 10px 0px 0px;
   font-family: Archivo Narrow, Helvetica;
+}
+
+ul {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 3%;
+  list-style-type: none;
+}
+
+li {
+  float: right;
+  margin: 0 30px 0 30px;
+}
+
+li a {
+  display:block;
+  font-size: 80px;
+  font-family: Bebas Neue, Helvetica;
+  color: #FFF;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #E0E1DD;
 }
 
 .twocolumns {
