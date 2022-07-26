@@ -1,3 +1,3 @@
 # My-Website
-just a website
-link at PuzzledWhale.github.io
+just a website. 
+Link is at PuzzledWhale.github.io
