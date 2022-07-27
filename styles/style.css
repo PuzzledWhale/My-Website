@@ -86,9 +86,7 @@ p {
 
 ul {
   display: flex;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 3%;
+  margin: auto;
   list-style-type: none;
 }
 
