@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #003459;
+  background-color: #1b263b;
   margin: 0;
   padding: 0;
 }
@@ -21,7 +21,7 @@ body {
 }
 
 .email a {
-  color: #FFF;
+  color: #e0e1dd;
   text-decoration: none;
   font-size: 18pt;
   margin: 40px 10px 0px 0px;
@@ -29,11 +29,11 @@ body {
 }
 
 .email a:hover {
-  color: #E0E1DD;
+  color: #fff;
 }
 
 #main-header {
-  background-color: #00171F;
+  background-color: #0d1b2a;
   /* position: absolute; */
   width: 100%;
   height: 210px;
@@ -42,8 +42,8 @@ body {
 }
 
 h1 {
-  color: #00171F;
-  background-color: #FFFFFF;
+  color: #0d1b2a;
+  background-color: #e0e1dd;
   text-align: center;
   font-size: 200pt;
   height: 210px;
@@ -55,14 +55,14 @@ h1 {
 }
 
 h2 {
-  color: #007EA7;
+  color: #415a77;
   font-size: 42pt;
   line-height: 0.6em;
   margin: 100px 10px 0px 0px;
 }
 
 h3 {
-  color: #00A8E8;
+  color: #778da9;
   font-size: 30pt;
   margin: 50px 0px 0px 30px;
   line-height: 0.6em;
@@ -81,7 +81,7 @@ header {
 }
 
 p {
-  color: #FFF;
+  color: #e0e1dd;
   font-size: 18pt;
   /*padding: 5px;*/
   margin: 40px 10px 0px 0px;
@@ -103,12 +103,12 @@ li a {
   display:block;
   font-size: 60px;
   font-family: Bebas Neue, Helvetica;
-  color: #FFF;
+  color: #e0e1dd;
   text-decoration: none;
 }
 
 li a:hover {
-  color: #E0E1DD;
+  color: #fff;
 }
 
 .twocolumns {
@@ -131,6 +131,10 @@ li a:hover {
   width: 200px;
   height:200px;
   margin: 30px 0 0 0px;
+}
+
+.contacts ul {
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 800px) {
