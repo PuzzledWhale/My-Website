@@ -57,15 +57,15 @@ h1 {
 h2 {
   color: #415a77;
   font-size: 42pt;
-  line-height: 0.6em;
-  margin: 100px 10px 0px 0px;
+  line-height: 0.9em;
+  margin: 70px 10px 0px 0px;
 }
 
 h3 {
   color: #778da9;
   font-size: 30pt;
-  margin: 50px 0px 0px 30px;
-  line-height: 0.6em;
+  margin: 40px 0px 0px 30px;
+  line-height: 0.9em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,8 +74,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    display: flex;
-    flex-direction: row;
+    /* display: flex; */
+    /* flex-direction: row; */
     justify-content: space-between;
     margin-bottom: 2em;
 }
@@ -96,7 +96,7 @@ ul {
 
 li {
   float: right;
-  margin: 0 30px 0 30px;
+  margin: 0 30px;
 }
 
 li a {
@@ -117,8 +117,8 @@ li a:hover {
 }
 
 .logo img{
-  margin:0 0 0 100px;
-  float:left;
+  margin-left: 100px;
+  /* float:left; */
   height:210px;
   text-align:center;
 }
@@ -137,15 +137,47 @@ li a:hover {
   margin-top: 30px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 945px) {
   #main-header {
-    width: 200%;
+    /* width: 200%; */
+    height: 80%;
   }
-  header {
-    flex-direction: column;
+  .logo img {
+    margin:auto;
+    height:105px;
+    /* display:none; */
+  }
+  .logo {
+    margin: auto;
+  }
+  .email {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  h2 {
+    font-size: 34pt;
+    margin-top: 30px;
+  }
+  h3 {
+    font-size: 26pt;
+    margin-top: 10px;
+  }
+  p {
+    font-size: 15pt;
   }
   .twocolumns {
+    display: column;
+  }
+  .project img {
+    width: 100px;
+    height: 100px;
+  }
+  #main-header {
     flex-direction: column;
+  }
+  li {
+    margin: 0 10px;
   }
   li a {
     font-size: 40px;
