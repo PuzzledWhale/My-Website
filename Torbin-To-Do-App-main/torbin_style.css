@@ -136,13 +136,9 @@ input[type="submit"]:hover, button:hover {
   position: absolute;
   right: 20px;
   cursor: pointer;
-  width: 16px;
-  filter: brightness(1.4);
 }
 
-.logo {
-  width: 200px;
-}
+
 
 
 

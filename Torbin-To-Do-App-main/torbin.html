@@ -3,28 +3,24 @@
 
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/torbin_style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Torbin</title>
-    <link rel="icon" type="image/png" href="images/torbin.png">
   </head>
 
   <body>
-    <!-- <h1>Torbin</h1> -->
-    <img src = "images/torbin.png" alt="Torbin" class="logo"></img>
-    <br>
+    <h1>Torbin</h1>
     <button id="newTask">Add New Task</button>
     <button id="clearStorage">Full Reset</button>
 
 
     <div class = "center">
       <div id = "creationMenu">
-        <!-- <p id = "cancelCreator">X</p> -->
-        <img src = "images/x.png" alt="Cancel" id = "cancelCreator"></img>
+        <p id = "cancelCreator">X</p>
         <h3>Task</h3>
         <form name ="my">
           <input name="todo" value = "" id="write">
           <input type="submit" value = "Save" id="enterButton">
-        </form>
+        </form> 
 
         <h3>Category</h3>
         <div class = "twocolumn">
@@ -38,7 +34,7 @@
               <input name="catNamer" value = "" id="catWrite">
               <input type="color" id="catColor" name="catColor" value="#0D0630">
               <input type="submit" value = "Create" id="catEnter">
-            </form>
+            </form> 
             <color></color>
           </div>
         </div>
@@ -78,9 +74,9 @@
               <!-- <td class = "settings"><img src = "images/geardark.png" alt="settings" class = "settingsButton" hidden></td> -->
             </tr>
           </table>
-        </div>
+        </div>    
       </div>
     </div>
-    <script src="scripts/torbin_script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
