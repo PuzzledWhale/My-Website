@@ -51,21 +51,29 @@ class SineWave {
         this.color1 = color1;
         this.color2 = color2;
         this.layer = layer;
+        this.bterm = amp;
     }
 
     update() {
         this.amp += this.ampSpeed;
         this.shift += this.shiftSpeed;
-        // this.offset += this.shiftSpeed;
+        // this.offset += this.ampSpeed;
         if(Math.abs(this.amp) > this.maxAmp) {
             this.ampSpeed *= -1;
         }
     }
     
     calculateAt(x) {
-        return this.amp * Math.sin(x * this.freq + this.shift) + this.offset;
+        return this.amp * Math.cos(x * this.freq + this.shift) + this.offset;
         // return this.amp * Math.sin(x * this.freq + this.shift) + this.offset + (x / 9) - height * 0.2;
     }
+}
+
+function createGradient(color1, color2) {
+    const gradient = ctx.createLinearGradient(0, 0, width, 0);
+    gradient.addColorStop(0, color1); // Start color
+    gradient.addColorStop(1, color2); // End color
+    return gradient;
 }
 
 // Function to resize the canvas
@@ -77,14 +85,10 @@ function resizeCanvas() {
     canvasGuard.width = window.innerWidth;
     // canvasGuard.height = window.innerHeight;
     canvasGuard.height = window.innerHeight * 0.7;
+    
+    // ctx.drawSineWave(new SineWave(0,0,0,0,200,0,'#DC4594','#4441DF',1));
 }
 
-function createGradient(color1, color2) {
-    const gradient = ctx.createLinearGradient(0, 0, width, 0);
-    gradient.addColorStop(0, color1); // Start color
-    gradient.addColorStop(1, color2); // End color
-    return gradient;
-}
 
 // amplitude, frequency, phase shift, amplitude change speed, translation speed, max amplitude
 // let waves = Array[[20, 0.0035,0,0.5,0.02,150],[24,0.003,1.231,-0.3,0.04,100],[10,0.01,-1,0.001, 0.01,50]];
@@ -93,16 +97,17 @@ function createGradient(color1, color2) {
 const waves = []
 
 waves.push(new SineWave(50, 0.001, 0.01, 0.1, 45, 0, '#DC4594', '#E54646', 0)); // pink orange thicc
-waves.push(new SineWave(50, 0.002, -0.03, 0.9, 13, -50, '#F0A742', '#900137',0)); // yellow red thin
+waves.push(new SineWave(50, 0.004, -0.03, 0.9, 13, -50, '#F0A742', '#900137',0)); // yellow red thin
 waves.push(new SineWave(50, 0.002, -0.04, 0.3, 37, -80, '#D9428F', '#4441DF',0)); // pink blue mid
-waves.push(new SineWave(75, 0.002, 0.04, -0.3, 46, 50, '#4441DF', '#D9428F', 0)); // blue pink thicc
+waves.push(new SineWave(30, 0.002, -0.07, 0.6, 16, 95, '#900137', '#F0A742',0)); // red yellow thin
+waves.push(new SineWave(60, 0.003, 0.04, -0.3, 80, 70, '#4441DF', '#D9428F', 0)); // blue pink thicc
 
-
-// waves.push(new SineWave(34, 0.0051, 0.02, 0, 100, -167, '#FCFCFD', '#FCFCFD', 1)); // white guard
+// waves.push(new SineWave(34, 0.0051, 0.02, 0, 140, -190, '#FCFCFD', '#FCFCFD', 1)); // white guard
 // waves.push(new SineWave(30, 0.0046, 0.04, 0, 100, 163, '#FCFCFD', '#FCFCFD', 1)); // white guard
 
-waves.push(new SineWave(34, 0.0051, 0.02, 0, 140, -190, '#161616', '#161616', 1)); // dark guard
-waves.push(new SineWave(30, 0.0046, 0.04, 0, 140, 190, '#161616', '#161616', 1)); // dark guard
+waves.push(new SineWave(34, 0.0051, 0.02, 0, 150, -200, '#161616', '#161616', 1)); // dark guard
+waves.push(new SineWave(30, 0.0046, 0.04, 0, 150, 200, '#161616', '#161616', 1)); // dark guard
+// waves.push(new SineWave(0, 0, 0, 0, 50, 0, '#161616', '#161616', 1));
 
 function drawSineWave(sinWave) {
     curr = sinWave.layer == 0? ctx : ctxG;
