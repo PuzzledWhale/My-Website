@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    
 }
 
 /* canvas {
@@ -21,9 +20,11 @@ body {
 
 .dark-banner {
     z-index: 1;
-    padding: 8vh 0 0 70px;
+    padding: 8vh 0 0 80px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 3vh;
+    /* background-color: #161616; */
 }
 
 ul {
@@ -41,15 +42,11 @@ li {
 
 li a {
     display:block;
-    font-size: 2em;
+    font-size: 2.5rem;
     color: #fcfcfd;
     text-decoration: none;
-    font-weight: bolder;
-    /* font-family: Helvetica; */
-    /* font-family: 'Helvetica', Arial, sans-serif; */
-    font-family: 'Franklin Gothic Heavy';
+    font-family: 'Franklin Gothic Heavy', 'Helvetica', Arial, sans-serif;
     font-style: italic;
-
   }
   
 
@@ -80,7 +77,7 @@ li a {
     top: 0;
 }
 
-#sineWaveCanvas {
+#colorCanvas {
     z-index: 0;
     position: absolute;
     left: 0;
@@ -90,6 +87,8 @@ li a {
     animation-iteration-count: -1;
     animation-fill-mode: forwards;
 }
+
+
 
 #name {
     background-color: #FFFFFF;
@@ -107,12 +106,15 @@ li a {
 }
 
 .front {
+    /* margin-top: 28vh; */
     position: absolute;
     top: 50%;
     height: 100%;
     text-align: center;
     z-index: 1;
-    background-color: #FFFFFF;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: -1;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
@@ -123,3 +125,95 @@ li a {
         opacity: 1;
     }
 }
+
+.glitch:hover {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
+    animation: glitch_color 1ms infinite;
+    animation: glitch_offset 1s linear infinite;
+}
+
+.glitch:hover:before, .glitch:hover:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+}
+  
+.glitch:before{
+    animation: glitchTop 0.6s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch:after{
+    animation: glitchBottom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+  
+@keyframes glitch_color {
+    0% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+        0.025em 0.04em 0 #fffc00;
+    }
+    15% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+        0.025em 0.04em 0 #fffc00;
+    }
+    16% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+        -0.05em -0.05em 0 #fffc00;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+        -0.05em -0.05em 0 #fffc00;
+    }
+    50% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+        0 -0.04em 0 #fffc00;
+    }
+    99% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+        0 -0.04em 0 #fffc00;
+    }
+    100% {
+        text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+        -0.04em -0.025em 0 #fffc00;
+    }
+}
+  
+@keyframes glitch_offset{
+    2%,64%{
+        transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+        transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+        transform: translate(0,0) skew(5deg); 
+    }
+}
+  
+@keyframes glitchTop{
+    2%,64%{
+        transform: translate(2px,-2px);
+    }
+    4%,60%{
+        transform: translate(-2px,2px);
+    }
+    62%{
+        transform: translate(13px,-1px) skew(-13deg); 
+    }
+}
+  
+@keyframes glitchBottom{
+    2%,64%{
+        transform: translate(-2px,0);
+    }
+    4%,60%{
+        transform: translate(-2px,0);
+    }
+    62%{
+        transform: translate(-22px,5px) skew(21deg); 
+    }
+}
+  

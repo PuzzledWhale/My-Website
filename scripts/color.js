@@ -1,4 +1,4 @@
-const canvas = document.getElementById('sineWaveCanvas');
+const canvas = document.getElementById('colorCanvas');
 const canvasGuard = document.getElementById('guardCanvas');
 
 const ctx = canvas.getContext('2d');
@@ -10,9 +10,7 @@ resizeCanvas();
 let width = canvas.width;
 let height = canvas.height;
 let centerY = height / 2;
-let counter = 0;
 
-// Wave objects can be made up of multiple sine waves together
 class CompoundWave {
     constructor(waves, color, thickness) {
         this.parts = []
@@ -62,10 +60,34 @@ class SineWave {
             this.ampSpeed *= -1;
         }
     }
+
+    getColor() {
+        if(this.color1 == this.color2) {
+            return this.color1;
+        } else {
+            const gradient = (this.layer == 0? ctx : ctxG).createLinearGradient(0, 0, width, 0);
+            gradient.addColorStop(0, color1); // Start color
+            gradient.addColorStop(1, color2); // End color
+            return gradient;
+        }
+    }
     
     calculateAt(x) {
         return this.amp * Math.cos(x * this.freq + this.shift) + this.offset;
         // return this.amp * Math.sin(x * this.freq + this.shift) + this.offset + (x / 9) - height * 0.2;
+    }
+}
+
+class Line {
+    constructor(slope, intercept, slopeSpeed, interceptSpeed, thickness, color1, color2, layer) {
+        this.slope = slope;
+        this.maxSlope - slope;
+        this.intercept = intercept;
+        this.interceptSpeed = interceptSpeed;
+        this.slopeSpeed = slopeSpeed;
+        this.thickness = thickness;
+        this.color1 = color2;
+
     }
 }
 
@@ -75,6 +97,7 @@ function createGradient(color1, color2) {
     gradient.addColorStop(1, color2); // End color
     return gradient;
 }
+
 
 // Function to resize the canvas
 function resizeCanvas() {
@@ -107,7 +130,7 @@ waves.push(new SineWave(60, 0.003, 0.04, -0.3, 80, 70, '#4441DF', '#D9428F', 0))
 
 waves.push(new SineWave(34, 0.0051, 0.02, 0, 150, -200, '#161616', '#161616', 1)); // dark guard
 waves.push(new SineWave(30, 0.0046, 0.04, 0, 150, 200, '#161616', '#161616', 1)); // dark guard
-// waves.push(new SineWave(0, 0, 0, 0, 50, 0, '#161616', '#161616', 1));
+// waves.push(new SineWave(20, 0.002, 0, 0, 50, 0, '#161616', '#161616', 1));
 
 function drawSineWave(sinWave) {
     curr = sinWave.layer == 0? ctx : ctxG;
@@ -156,7 +179,7 @@ function drawBorder(x) {
     ctxG.beginPath();
     ctxG.moveTo(x, 0);
     ctxG.lineTo(x, height);
-    ctxG.lineWidth = 70;
+    ctxG.lineWidth = 80;
     ctxG.strokeStyle = '#161616';
     ctxG.stroke();
 }
