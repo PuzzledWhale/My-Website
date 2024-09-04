@@ -34,8 +34,9 @@ ul {
 }
   
 li {
+    float: left;
     margin: 0 5vmin;
-    padding: 0 2vw; 
+    padding: 0 5vw; 
 }
 
 li a {
@@ -300,8 +301,18 @@ li a {
     }
 }
 
-@media (min-width: 1050px) {
-    li {
-        float: left;
+@media (max-width: 1150px) {
+    .banner-text {
+        font-size: 2em;
     }
-  }
+
+    .dark-banner {
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    li {
+        float:none;
+    }
+}
