@@ -103,11 +103,11 @@ function createGradient(color1, color2) {
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     // canvas.height = window.innerHeight;
-    canvas.height = window.innerHeight * 0.7;
+    canvas.height = window.innerHeight * 0.55;
 
     canvasGuard.width = window.innerWidth;
     // canvasGuard.height = window.innerHeight;
-    canvasGuard.height = window.innerHeight * 0.7;
+    canvasGuard.height = window.innerHeight * 0.55;
     
     // ctx.drawSineWave(new SineWave(0,0,0,0,200,0,'#DC4594','#4441DF',1));
 }
