@@ -350,7 +350,13 @@ a {
 
 @media (max-width: 800px) {
     .project img {
+        width: 0;
+        height:0;
         visibility: collapse;
+    }
+
+    .twocolumns {
+        flex-direction: column-reverse;
     }
 
     .project-text-left {
