@@ -176,15 +176,16 @@ a {
 
 .project {
     width: 70vw;
-    margin-bottom: 40px;
-    padding: 40px;
+    margin: 20px 0;
+    padding: 5vmin;
     background-color: #1d1d1d;
     border-radius: 25px;
 }
   
 .project img {
-    width: 200px;
-    height:200px;
+    margin: auto;
+    height: 10em;
+    width: 10em;
 }
 
 .project:hover {
@@ -205,17 +206,6 @@ a {
     width: 70vw;
     line-height: 1.5;
     margin-left: 20px;
-}
-
-.project-text-right {
-    text-align: right;
-    color: #fcfcfd;
-    margin: auto;
-    font-weight: 500;
-    font-size: 1.3em;   
-    width: 70vw;
-    line-height: 1.5;
-    margin-right: 20px;
 }
 
 .glitch:hover {
@@ -355,5 +345,15 @@ a {
 
     li {
         float:none;
+    }
+}
+
+@media (max-width: 800px) {
+    .project img {
+        visibility: collapse;
+    }
+
+    .project-text-left {
+        margin: auto;
     }
 }
