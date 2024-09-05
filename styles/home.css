@@ -200,17 +200,16 @@ a {
 .project-name {
     color: #fcfcfd;
     font-weight: 700;
-    font-size: 1.3em;   
+    font-size: 1.2em;   
 }
 
 .project-text-left {
     color: #fcfcfd;
     margin: auto;
     font-weight: 500;
-    font-size: 1.3em;   
+    font-size: 1.1em;   
     width: 70vw;
     line-height: 1.5;
-    margin-left: 20px;
 }
 
 .glitch:hover {
