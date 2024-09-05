@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-/* canvas {
-    background-color: #161616;
-} */
-
 body {
     /* display: flex; */
     justify-content: center;
@@ -47,12 +43,11 @@ li a {
     font-size: 2.5rem;
     color: #fcfcfd;
     font-style: italic;
-    /* font-weight: bold; */
-  }
+}
 
-  a {
+a {
     text-decoration: none;
-  }
+}
   
 
 .banner-text {
@@ -81,7 +76,6 @@ li a {
 
 .center {
     display: flex;
-    z-index: 2;
     justify-content: center;
     align-items: center;
     left: 0;
@@ -101,13 +95,10 @@ li a {
 .body-text {
     color: #fcfcfd;
     margin-bottom: 20px;
-    /* align-items: center;
-    text-align: center; */
     font-weight: 500;
     font-size: 1.3em;   
     width: 70vw;
     line-height: 2;
-    /* margin-top: 7vw; */
 }
 
 #guardCanvas {
@@ -115,7 +106,6 @@ li a {
     left: 0;
     top: 0;
     z-index: 0;
-    /* filter:blur(20px); */
 }
 
 #colorCanvas {
@@ -125,10 +115,6 @@ li a {
     top: 0;
     filter:blur(30px);
 }
-
-/* .contacts {
-    margin-top: 18vh;
-} */
 
 .link-icon {
     width: 60px;
@@ -166,7 +152,7 @@ li a {
 
 .divider {
 	background: linear-gradient(-45deg, #E54646, #D9428F, #4441DF, #F0A742);
-    width: 80vw;
+    width: 70vw;
     margin: 40px 0;
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite, fadeInAnimationStaggered ease 2s;
@@ -182,6 +168,56 @@ li a {
     animation-iteration-count: -1;
     animation-fill-mode: forwards;
 }
+
+.twocolumns {
+    display: flex;
+    flex-direction: row;
+}
+
+.project {
+    width: 70vw;
+    margin-bottom: 40px;
+    padding: 40px;
+    background-color: #1d1d1d;
+    border-radius: 25px;
+}
+  
+.project img {
+    width: 200px;
+    height:200px;
+}
+
+.project:hover {
+    transform: translate3D(0,-1px,0) scale(1.03);
+}
+
+.project-name {
+    color: #fcfcfd;
+    font-weight: 700;
+    font-size: 1.3em;   
+}
+
+.project-text-left {
+    color: #fcfcfd;
+    margin: auto;
+    font-weight: 500;
+    font-size: 1.3em;   
+    width: 70vw;
+    line-height: 1.5;
+    margin-left: 20px;
+}
+
+.project-text-right {
+    text-align: right;
+    color: #fcfcfd;
+    margin: auto;
+    font-weight: 500;
+    font-size: 1.3em;   
+    width: 70vw;
+    line-height: 1.5;
+    margin-right: 20px;
+}
+
 .glitch:hover {
     text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
     animation: glitch_color 1ms infinite;
