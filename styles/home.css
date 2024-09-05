@@ -29,6 +29,7 @@ body {
 ul {
     display: inline-block;
     list-style-type: none;
+    z-index: 3;
 }
   
 li {
@@ -99,6 +100,10 @@ a {
     font-size: 1.3em;   
     width: 70vw;
     line-height: 2;
+}
+
+.canvas-section {
+    overflow: hidden;
 }
 
 #guardCanvas {
